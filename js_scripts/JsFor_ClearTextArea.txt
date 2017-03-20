@@ -1,0 +1,1 @@
+$('textarea#text').sendkeys('{selectall}{del}');

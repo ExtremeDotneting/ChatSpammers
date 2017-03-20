@@ -1,0 +1,10 @@
+(function (){
+  try
+  {
+    var elem=$('.message');
+    return elem.length+0;
+  }
+  catch(ex){
+    return 0;
+  }
+})();

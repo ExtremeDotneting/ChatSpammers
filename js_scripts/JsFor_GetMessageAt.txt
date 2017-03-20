@@ -1,0 +1,11 @@
+(function (){
+  try
+  {
+    var elem=$('.message')[{0}].innerHTML;
+    return elem;
+  }
+  catch(ex){
+    return 'msgError';
+  }
+})();
+https://mobt.chatvdvoem.ru/ch2stat/test_srv/stickers

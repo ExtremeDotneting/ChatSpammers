@@ -1,0 +1,29 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomWebBrowsers"
+        xmlns:awe="http://schemas.awesomium.com/winfx" x:Class="CustomWebBrowsers.TestWindow_CustomBrowser"
+        mc:Ignorable="d"
+        Title="TestWindow_CustomBrowser" Height="316.6" Width="346">
+    <Grid>
+        <Button x:Name="button1" Content="Create" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Width="74" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Load sync" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top" Width="74" Click="button2_Click"/>
+        <Button x:Name="button3" Content="Load async" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="74" Click="button3_Click"/>
+        <Button x:Name="button4" Content="JS sync" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top" Width="74" Click="button4_Click"/>
+        <Button x:Name="button5" Content="JS async" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="74" Click="button5_Click"/>
+        <Button x:Name="button6" Content="JS result" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="74" Click="button6_Click"/>
+        <Label x:Name="label" Content="In main thread" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+
+        <Button x:Name="button7" Content="Create" HorizontalAlignment="Left" Margin="200,42,0,0" VerticalAlignment="Top" Width="74" Click="button7_Click"/>
+        <Button x:Name="button8" Content="Load sync" HorizontalAlignment="Left" Margin="200,67,0,0" VerticalAlignment="Top" Width="74" Click="button8_Click"/>
+        <Button x:Name="button9" Content="Load async" HorizontalAlignment="Left" Margin="200,92,0,0" VerticalAlignment="Top" Width="74" Click="button9_Click"/>
+        <Button x:Name="button10" Content="JS sync" HorizontalAlignment="Left" Margin="200,117,0,0" VerticalAlignment="Top" Width="74" Click="button10_Click"/>
+        <Button x:Name="button11" Content="JS async" HorizontalAlignment="Left" Margin="200,142,0,0" VerticalAlignment="Top" Width="74" Click="button11_Click"/>
+        <Button x:Name="button12" Content="JS result" HorizontalAlignment="Left" Margin="200,167,0,0" VerticalAlignment="Top" Width="74" Click="button12_Click"/>
+        <Label x:Name="label1" Content="In background thread" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" Height="23" Margin="10,211,13,0" TextWrapping="Wrap" Text="http://google.com" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Created in:" Margin="10,239,13,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

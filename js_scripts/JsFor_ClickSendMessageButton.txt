@@ -1,0 +1,1 @@
+$('#text_send')[0].click();

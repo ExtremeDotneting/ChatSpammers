@@ -1,0 +1,31 @@
+function checkFunc2(){
+  var elem=$('.controlwrapper').css('display');
+  if(elem==='none')
+    return 0;
+  if(elem==='block')
+    return 1;
+  return 'error '+ elem;
+};
+
+function checkFunc1(){
+  var elem=$('.disconnected').length;
+  if(elem===1)
+    return 0;
+  if(elem===0)
+    return 1;
+  return 'error '+ elem;
+};
+(function (){
+  try
+  {
+    var checkRes1=checkFunc1(); var checkRes2=checkFunc2();
+    if (checkRes1 === 1 && checkRes2 === 1) 
+      return 1; 
+    if (checkRes1 === 0 || checkRes2 === 0) 
+      return 0; 
+    return 'res: '+checkRes1+' _ '+checkRes2;
+  }
+  catch(ex){
+    return 'error '+ex;
+  }
+})();

@@ -1,0 +1,1 @@
+document.getElementById('chat_close').click();

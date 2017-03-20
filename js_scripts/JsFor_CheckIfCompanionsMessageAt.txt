@@ -1,0 +1,13 @@
+(function (){
+  try
+  {
+    var elem=$('.message').parent()[0].className;
+    if(elem==='messageFrom')
+      return 1;
+    if(elem==='messageTo')
+      return 0;
+  }
+  catch(ex){
+    return 'error';
+  }
+})();

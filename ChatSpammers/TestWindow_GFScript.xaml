@@ -1,0 +1,14 @@
+﻿<Window x:Class="ChatSpammers.TestWindow_GFScript"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatSpammers"
+        mc:Ignorable="d"
+        Title="TestWindow_GFScript" Height="337.234" Width="453.191">
+    <Grid>
+        <Button x:Name="button" Content="Go" Margin="26,0,30,24" VerticalAlignment="Bottom" Height="27" Click="button_Click"/>
+        <TextBox x:Name="textBox" AcceptsReturn="True"  Margin="26,10,30,66"  ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Text="" FontFamily="Courier New" />
+
+    </Grid>
+</Window>

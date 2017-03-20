@@ -1,0 +1,15 @@
+﻿<Window x:Class="Helpers.Window_CustomConsole"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Helpers"
+        mc:Ignorable="d"
+        Title="Window_CustomConsole" Height="310.5" Width="525.597">
+    <Grid>
+        <TextBox x:Name="textBox" ScrollViewer.VerticalScrollBarVisibility="Visible"  Margin="10" TextWrapping="Wrap" Text="" FontFamily="Courier New" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" FontSize="15" FontWeight="Bold" Foreground="#FF682436"/>
+        <TextBox x:Name="textBox_ConsoleInput" AcceptsReturn="True" Margin="11,0,59,10" Height="43" FontSize="10"  VerticalAlignment="Bottom"  FontFamily="Courier New"/>
+        <Button x:Name="buttonGo" Content="Go" HorizontalAlignment="Right" Margin="0,0,28,10" VerticalAlignment="Bottom" Width="31" Click="button1_Click" Height="43"/>
+
+    </Grid>
+</Window>

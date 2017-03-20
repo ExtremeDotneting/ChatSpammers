@@ -1,0 +1,1 @@
+$("a[onclick = 'javascript:$('#chat_start').click();return false;']")[0].click();
