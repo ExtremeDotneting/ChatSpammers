@@ -1,0 +1,601 @@
+<Project>
+  <Name>SpammerNekto</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Wpf</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Main</Name>
+        <Access>Public</Access>
+        <Location left="1969" top="66" />
+        <Size width="162" height="141" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Main()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>UsefulPresenter</Name>
+        <Access>Public</Access>
+        <Location left="1877" top="309" />
+        <Size width="358" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public DispatcherOfTwoChatsHandler DispatcherOfTwoChatsHandlerProperty { get; private set; }</Member>
+        <Member type="Property">public TwoDialogsSpammerSettings TwoDialogsSpammerSettingsProperty { get; private set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BasicChatHandler</Name>
+        <Access>Public</Access>
+        <Location left="1876" top="1668" />
+        <Size width="353" height="401" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void InitializeCompanionSearch(CompanionSearchSettings companionSearchSettings)</Member>
+        <Member type="Method">public void FindCompanion()</Member>
+        <Member type="Method">public void FinishConversation()</Member>
+        <Member type="Property">public ConversationStatus ConversationStatusProperty { get; private set; }</Member>
+        <Member type="Method">void StartSimulateWriting()</Member>
+        <Member type="Method">void StopSimulateWriting()</Member>
+        <Member type="Method">void SetMessageText(string text)</Member>
+        <Member type="Method">void SendMessage()</Member>
+        <Member type="Method">public void InvokeMessage(string text, int timeOfWriting)</Member>
+        <Member type="Property">public ICustomBrowser CustomBrowser { get; set; }</Member>
+        <Member type="Method">public ChatMessage GetMessageAt(int number)</Member>
+        <Member type="Method">public int GetMessagesCount()</Member>
+        <Member type="Method">public void UpdateMessagesList()</Member>
+        <Member type="Method">public void UpdateState()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TwoChatsHandler</Name>
+        <Access>Public</Access>
+        <Location left="1876" top="1274" />
+        <Size width="353" height="278" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public BasicChatHandler Chat1 { get; }</Member>
+        <Member type="Property">public BasicChatHandler Chat2 { get; }</Member>
+        <Member type="Method">public void StartCallForwarding()</Member>
+        <Member type="Method">public void StopCallForwarding()</Member>
+        <Member type="Property">public TwoDialogsHandlerStatus TwoDialogsHandlerStatusProperty { get; private set; }</Member>
+        <Member type="Property">public TwoDialogsSpammerSettings TwoDialogsSpammerSettingsProperty { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ICustomBrowser</Name>
+        <Access>Public</Access>
+        <Location left="1032" top="2210" />
+        <Size width="276" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void LoadPage(string urlStr)</Member>
+        <Member type="Method">void LoadPageAsync()</Member>
+        <Member type="Method">object ExJs(string script)</Member>
+        <Member type="Method">void ExJsAsync(string script)</Member>
+        <Member type="Property">bool ErrorSafetyMoodEnabled { get; set; }</Member>
+        <Member type="Property">string Proxy { get; set; }</Member>
+        <Member type="Property">CustomBrowserStatus CustomBrowserStatusProperty { get; }</Member>
+      </Entity>
+      <Entity type="Enum">
+        <Name>CustomBrowserStatus</Name>
+        <Access>Public</Access>
+        <Location left="1362" top="2256" />
+        <Size width="162" height="156" />
+        <Collapsed>True</Collapsed>
+        <Value>NotExist</Value>
+        <Value>Loaded</Value>
+        <Value>ExecutingJs</Value>
+        <Value>Loading</Value>
+        <Value>HasError</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>CompanionSearchSettings</Name>
+        <Access>Public</Access>
+        <Location left="2826" top="1631" />
+        <Size width="233" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public bool IsUserMan { get; set; }</Member>
+        <Member type="Property">public bool? IsCompanionMan { get; set; }</Member>
+        <Member type="Property">public PeoplesAge UserAge { get; set; }</Member>
+        <Member type="Property">public List&lt;PeoplesAge&gt; CompanionAge { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>PeoplesAge</Name>
+        <Access>Public</Access>
+        <Location left="3109" top="1649" />
+        <Size width="162" height="161" />
+        <Collapsed>True</Collapsed>
+        <Value>Under17</Value>
+        <Value>From18To21</Value>
+        <Value>From22To25</Value>
+        <Value>From25To35</Value>
+        <Value>Older36</Value>
+      </Entity>
+      <Entity type="Structure">
+        <Name>ChatMessage</Name>
+        <Access>Public</Access>
+        <Location left="2329" top="1914" />
+        <Size width="189" height="131" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public string Text { get; set; }</Member>
+        <Member type="Property">public bool IsCompanionsMessage { get; set; }</Member>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ConversationStatus</Name>
+        <Access>Public</Access>
+        <Location left="2601" top="1980" />
+        <Size width="162" height="210" />
+        <Collapsed>True</Collapsed>
+        <Value>NotInitialized</Value>
+        <Value>SearchCompanion</Value>
+        <Value>TalkWait</Value>
+        <Value>TalkWriting</Value>
+        <Value>TalkSending</Value>
+        <Value>TalkGettingData</Value>
+        <Value>LoadError</Value>
+        <Value>UndefinedError</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>TwoChatsHandlerStatus</Name>
+        <Access>Public</Access>
+        <Location left="2291" top="1363" />
+        <Size width="185" height="148" />
+        <Collapsed>True</Collapsed>
+        <Value>Working</Value>
+        <Value>Complete</Value>
+        <Value>FatalErrorInBrowser</Value>
+        <Value>UntimelyFinished</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>ProxyDispatcher</Name>
+        <Access>Public</Access>
+        <Location left="1347" top="1274" />
+        <Size width="279" height="236" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void TryFindProxyes()</Member>
+        <Member type="Method">public string GetFreeProxy()</Member>
+        <Member type="Method">public void SetProxyStatus(string proxy, ProxyStatus proxyStatus)</Member>
+        <Member type="Property">public List&lt;string&gt; ProxyListDead { get; private set; }</Member>
+        <Member type="Property">public List&lt;string&gt; ProxyListFree { get; private set; }</Member>
+        <Member type="Property">public List&lt;string&gt; ProxyListUsedNow { get; private set; }</Member>
+        <Member type="Property">public IProxySearcher ProxySearcher { get; set; }</Member>
+        <Member type="Property">public ProxySearchConfigs ProxySearchConfigsProperty { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ProxyStatus</Name>
+        <Access>Public</Access>
+        <Location left="1130" top="1274" />
+        <Size width="162" height="119" />
+        <Collapsed>True</Collapsed>
+        <Value>Free</Value>
+        <Value>UsedNow</Value>
+        <Value>Dead</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>DispatcherOfTwoChatsHandler</Name>
+        <Access>Public</Access>
+        <Location left="1919" top="811" />
+        <Size width="310" height="243" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void StartWork()</Member>
+        <Member type="Method">public void StopWork()</Member>
+        <Member type="Property">public int WorkingUnitsCount { get; set; }</Member>
+        <Member type="Property">public TwoDialogsSpammerSettings TwoDialogsSpammerSettingsProperty { get; set; }</Member>
+        <Member type="Property">public ProxyDispatcher ProxyDispatcherProperty { get; private set; }</Member>
+        <Member type="Property">public ICustomBrowserFactory CustomBrowserFactory { get; private set; }</Member>
+        <Member type="Property">public ProxySearchConfigs ProxySearchConfigsProperty { get; private set; }</Member>
+        <Member type="Property">public bool UseProxy { get; set; }</Member>
+        <Member type="Property">public bool UseDifferentCache { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TwoDialogsSpammerSettings</Name>
+        <Access>Public</Access>
+        <Location left="2752" top="821" />
+        <Size width="349" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public bool SaveLog { get; set; }</Member>
+        <Member type="Property">public bool SaveСorrespondence { get; set; }</Member>
+        <Member type="Property">public Func&lt;NektoChatTwoDialogsHandler, bool&gt; DelegateFinishTriggerCheck { get; set; }</Member>
+        <Member type="Property">public Action&lt;NektoChatTwoDialogsHandler&gt; DelegateOnUntimelyFinish { get; set; }</Member>
+        <Member type="Property">public Action&lt;NektoChatTwoDialogsHandler&gt; DelegateOnDialogFinishTrigger { get; set; }</Member>
+        <Member type="Property">public CompanionSearchSettings Companion1 { get; set; }</Member>
+        <Member type="Property">public CompanionSearchSettings Companion2 { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ICustomBrowserFactory</Name>
+        <Access>Public</Access>
+        <Location left="706" top="798" />
+        <Size width="238" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">ICustomBrowser CreateCustomBrowser()</Member>
+        <Member type="Method">void Initialize()</Member>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ProxyProtocol</Name>
+        <Access>Public</Access>
+        <Location left="1436" top="1688" />
+        <Size width="162" height="149" />
+        <Collapsed>True</Collapsed>
+        <Value>noMatter</Value>
+        <Value>http</Value>
+        <Value>https</Value>
+        <Value>socks4</Value>
+        <Value>socks5</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ProxyAnonLevel</Name>
+        <Access>Public</Access>
+        <Location left="1436" top="1627" />
+        <Size width="162" height="151" />
+        <Collapsed>True</Collapsed>
+        <Value>noMatter</Value>
+        <Value>hight</Value>
+        <Value>middle</Value>
+        <Value>low</Value>
+        <Value>none</Value>
+      </Entity>
+      <Entity type="Structure">
+        <Name>ProxySearchConfigs</Name>
+        <Access>Public</Access>
+        <Location left="1235" top="1612" />
+        <Size width="162" height="131" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public ProxyProtocol ProxyProtocolProperty { get; set; }</Member>
+        <Member type="Property">public ProxyAnonLevel ProxyAnonLevelProperty { get; set; }</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IProxySearcher</Name>
+        <Access>Public</Access>
+        <Location left="967" top="1383" />
+        <Size width="204" height="138" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">List&lt;string&gt; TryFindProxyes(ProxySearchConfigs configs)</Member>
+        <Member type="Property">ICustomBrowser CustomBrowser { get; set; }</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>AwesomiumCustomBrowserFactory</Name>
+        <Access>Public</Access>
+        <Location left="363" top="798" />
+        <Size width="238" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public ICustomBrowser CreateCustomBrowser()</Member>
+        <Member type="Method">public void Initialize()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AwesomiumCustomBrowser</Name>
+        <Access>Public</Access>
+        <Location left="1032" top="2516" />
+        <Size width="276" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void LoadPage(string urlStr)</Member>
+        <Member type="Method">public void LoadPageAsync()</Member>
+        <Member type="Method">public object ExJs(string script)</Member>
+        <Member type="Method">public void ExJsAsync(string script)</Member>
+        <Member type="Property">public bool ErrorSafetyMoodEnabled { get; set; }</Member>
+        <Member type="Property">public string Proxy { get; set; }</Member>
+        <Member type="Property">public CustomBrowserStatus CustomBrowserStatusProperty { get; private set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Dependency" first="2" second="6">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="6" second="7">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1917</X>
+          <Y>2094</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1275</X>
+          <Y>2185</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="4" second="5">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1333</X>
+          <Y>2327</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1336</X>
+          <Y>2327</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Dependency" first="2" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="2" second="9">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2199</X>
+          <Y>2095</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2566</X>
+          <Y>2101</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>2052</X>
+          <Y>1643</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="10">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="11" second="12">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1323</X>
+          <Y>1297</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1323</X>
+          <Y>1297</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="14">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2261</X>
+          <Y>1311</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2727</X>
+          <Y>999</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="13" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2074</X>
+          <Y>1079</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2074</X>
+          <Y>1249</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="13" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2008</X>
+          <Y>1084</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1485</X>
+          <Y>1170</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="14" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2930</X>
+          <Y>1093</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="13" second="14">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2254</X>
+          <Y>916</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2707</X>
+          <Y>916</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Dependency" first="15" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>744</X>
+          <Y>992</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1007</X>
+          <Y>2276</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="13" second="15">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1765</X>
+          <Y>897</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>986</X>
+          <Y>898</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="15">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1936</X>
+          <Y>560</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>840</X>
+          <Y>688</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="13">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="14">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2200</X>
+          <Y>560</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2876</X>
+          <Y>680</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="18" second="17">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1422</X>
+          <Y>1644</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="18" second="16">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1422</X>
+          <Y>1704</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="11" second="18">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1458</X>
+          <Y>1535</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1370</X>
+          <Y>1587</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="19" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>986</X>
+          <Y>1547</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1067</X>
+          <Y>1902</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Dependency" first="19" second="18">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1096</X>
+          <Y>1546</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1259</X>
+          <Y>1587</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="11" second="19">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="20" second="15">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="21" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
