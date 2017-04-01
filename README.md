@@ -1,5 +1,6 @@
 # TetrisCarGame.MinesweeperEngine
 <br />My chat spammers project. I spend working on it for month, but don`t finish it. More info you can see in video on my youtube chanel.
+<br />But it has many interesting things, that i will use in my new projects, like a code interpreter or awesomium browser wrapper.
 <br />
 <br />Work demo:
 ![alt tag](demo.gif)
